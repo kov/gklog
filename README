@@ -1,0 +1,90 @@
+-----------------------
+README - GKLog
+-----------------------
+
+What is GKLog?
+
+GKLog is a console-based program made to run with 'tail -f' over a pipe ('|')
+or to get specific lines from a log. It makes user-defined patterns
+and sub-patterns containing lines colored with a user-defined color.
+
+
+How do I compile it?
+
+Just enter it's dir and type 'make'. It should build correctly.
+Then with root run 'make install' to install it to your system and to create the
+initialization script.
+
+
+How do I use it?
+
+You'll want to use it with tail... just do:
+tail -f /var/log/syslog | gklog - -o /dev/null
+
+(change /dev/null to a file to write a diferent log or run it as root
+to let it log on /var/log/gklog, it's default)
+
+
+or you may also make it create a own log from a log file itself just do:
+gklog <log's_name>
+
+you may also tell it where to write it's log (there's a default, that is
+/var/log/gklog):
+gklog <log's_name> -o <file_name>
+
+and tell it not to show lines that have none of the pattern+sub-pattern:
+gklog <logs_name> -r
+
+
+How do I set up new rules and colors?
+
+You must edit /etc/gklog.rules. Your package should contain a default file. It
+will be copied to that location on 'make install'. It has a extremely disciplined
+format:
+
+Pattern&Sub Pattern=color
+
+it should contain the same number of lines and rules. You may, since version 
+0.5 write comments using the '#' symbol, blank lines are still not permitted.
+In the end of the file it should not cause damage, but if you put a blank line
+at the beginning you'll be disabling the color features.
+
+color can be:
+
+	color name to use
+	
+	green
+	blue
+	cyan
+	red
+	purple
+	brown
+	gray2 (the default for linux console)
+	gray1 (dark grey)
+	bblue (all the following 'b' beginning colors are bright)
+	bgreen
+	bcyan
+	bred
+	bpurple
+	yellow
+	white
+	
+
+Who can I mail if I wish to congratulate or make critics? ;)
+
+You should e-mail Gustavo Noronha Silva <dockov@zaz.com.br>
+Or visit his page (portuguese-only) at http://www.geocities.com/dockov
+
+
+Where can I get the latest copies of gklog?
+
+You may get them by ftp from:
+ftp://gklog.sourceforge.net/pub/gklog/
+
+or with the apt-get sources.list line:
+deb ftp://gklog.sourceforge.net/pub/gklog/debian potato main
+and 
+deb-src ftp://gklog.sourceforge.net/pub/gklog/debian potato main
+for the sources =)
+
+- By Kov!

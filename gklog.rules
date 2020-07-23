@@ -1,0 +1,23 @@
+# GKLog
+#
+# This file comes allong with GKLog you should edit it to
+# fit your needs =) It's defaulted to be used to monitor a
+# ipchains firewall
+# Also, be carefull!! You may not add a commented line at the
+# last line of this file yet
+#
+# The format for this file is:
+#
+# pattern&sub-pattern=color
+#
+# Refer to the README file to see wich colors can be used
+# and about the restrictions of this file
+# If you do not have a sub-pattern use ' ' (a single space)
+# every line has one =)
+
+Packet log&MASQ=bcyan
+Packet log&RETURN=yellow
+Packet log&REDIRECT=blue
+Packet log&DENY=purple
+Packet log&REJECT=red
+Packet log&ACCEPT=bgreen

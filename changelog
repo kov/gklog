@@ -1,0 +1,42 @@
+GKLog 0.7 - 04-12-2000 - 18:19
+	* Now gklog looks for configuration on user's $HOME first for 
+	  configuration, and if it does not find, looks for the global configuration
+	* New option: -q (or --quiet)... It is intended to disallow the output
+	  of the also new disclaimer shown when gklog starts.
+	* Translated some code from portuguese to english to help everyone
+	  on reading the code... 
+	* Removed the 'am's and 'pm's of the changelog as it does not make
+	  sense showing hour in 24 hours mode and showing am or pm =)
+	* Put the manpage made for the Debian distribution on the official
+	  source code and edited Makefile to install it.
+
+GKLog 0.6 - 24-11-2000 - 23:57
+	* Now you may add blank lines whererver you want and add as many
+	  comments as you wish, but you may not include a commented line
+	  after the last rule
+	* Translated some things in the code that were in portuguese to
+	  english, fixed the missing options in --help output
+
+GKLog 0.5 - 09-11-2000 - 20:50
+	* Added ways to put comments on the config file (still a little
+	   broken, as it is still not possible to put a blank line on it)
+
+GKLog 0.4	- 04-11-2000 - 02:13
+	* Added the option -c wich can be used to make gklog to use
+	  an alternate configfile other than /etc/gklog.rules
+
+GKLog 0.3	- 28-10-2000 - 11:50
+	* Corrected many issues about the rules handling and created three
+	  options to use in the command line. Changed the default output
+	  from /var/log/firewall to /var/log/gklog and the default log to
+	  read from /var/log/messages to /var/log/syslog
+	
+GKLog 0.2	- 27-10-2000
+	* Created new system of user defined rules and colors instead of
+	  the built-in ones from 0.1
+			
+GKLog 0.1	- 26-10-2000
+	* Initial Release
+	
+
+- Gustavo Noronha Silva (KoV) <dockov@zaz.com.br>

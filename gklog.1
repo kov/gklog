@@ -1,0 +1,42 @@
+.TH GKLOG 1 "November 25th" "GNU" "Debian GNU/Linux manual"
+.\" NAME should be all caps, SECTION should be 1-8, maybe w/ subsection
+.\" other parms are allowed: see man(7), man(1)
+.SH NAME
+gklog \- monitors and colorizes logs
+.SH SYNOPSIS
+.B gklog
+.I "<log_name> [OPTIONS]"
+.SH "DESCRIPTION"
+This manual page documents briefly the
+.BR gklog
+program.
+.PP
+.B gklog
+will read from a log and analyze it, depending on the options the
+user passes to it. It reads each line of the log file, compares it
+with the patterns at the config file 'till it finds a matching one.
+If so, it prints that line with the specified color, else it prints
+it with normal color. Use '-' as <log_name> to read from stdin.
+.SH OPTIONS
+GKLog options are included below.
+.TP
+.B \-h, \-\-help
+Print a help message and exits.
+.TP
+.B \-c FILENAME, \-\-config FILENAME
+Uses an alternate config file, instead of /etc/gklog.rules
+.TP
+.B \-o FILENAME, \-\-output FILENAME
+Outputs to an alternative file, instead of the default 
+/var/log/gklog
+.TP
+.B \-r, \-\-restrict
+Does not output non-matching lines. It is usefull for separating
+specific lines from the log.
+.B \-q, \-\-quiet
+Do not output program headers (disclaimer)
+.SH "SEE ALSO"
+This program will be very usefull when used with tail(1) and
+with a pipe (|) together. Read the README file.
+.SH AUTHOR
+This manual page was written by Gustavo Noronha Silva.
